@@ -1,0 +1,239 @@
+*{
+  box-sizing: border-box;
+}
+
+  /*:root {
+    color palette
+
+  } */
+
+  @font-face {
+    font-family: 'Quicksand-Regular';
+    src: url('../fonts/Quicksand-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  header {
+    background-color: #000000;
+    border-radius: 18px;
+    margin: 10px 10px 20px 10px;
+  }
+  h1 {
+    color: #fefdfb;
+    font-family: 'GreatVibes-Regular';
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: -0.05rem;
+    padding: 0.5rem 0.5rem;
+    text-shadow: 0px 11px 10px rgba(81, 67, 21, 0.8);
+  }
+
+  
+  input {
+    display: none;
+  }
+  
+  .open {
+    background-color: #bbbbbb;
+    width: 24px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    top: 8px;
+  }
+  
+  .open:before {
+    content: "";
+    background-color: #bbbbbb;
+    width: 24px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    position: relative;
+    top: -8px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+  }
+  
+  .open:after {
+    content: "";
+    background-color: #bbbbbb;
+    width: 24px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    position: relative;
+    top: 4px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+  }
+  
+  .menuOpen {
+    width: 24px;
+    height: 20px;
+    display: block;
+    padding: 15px;
+    cursor: pointer;
+    float: left;
+  }
+  
+  .menuOpen:hover .open:before {
+    top: -9px;
+  }
+  
+  .menuOpen:hover .open:after {
+    top: 5px;
+  }
+  
+  .menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(178, 111, 48, 0.9);
+  }
+  
+  .menu label {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-size: 100%;
+    cursor: pointer;
+  }
+  
+  .menu .menuContent {
+    position: relative;
+    top: 50%;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: -170px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  .menu ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: Trebuchet MS;
+    text-transform: uppercase;
+    padding: 10px 0;
+  }
+  
+  .menu ul li a:hover {
+    color: #ff8702;
+  }
+  
+  .menu ul li:hover {
+    background: white;
+  }
+  
+  .menuEffects {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+  
+  .menuEffects ul {
+    transform: translateY(0%);
+    transition: all 0.5s;
+  }
+  
+  #menuToggle:checked ~ .menuEffects {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+  }
+  
+  #menuToggle:checked ~ .menuEffects ul {
+    opacity: 1;
+  }
+  
+  #menuToggle:checked ~ .menuOpen .open {
+    background-color: transparent;
+  }
+  
+  #menuToggle:checked ~ .menuOpen .open:before {
+    content: "";
+    background-color: white;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    
+  }
+  
+  #menuToggle:checked ~ .menuOpen .open:after {
+    content: "";
+    background-color: white;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  
+  #menuToggle:not(:checked) ~ .menuEffects ul {
+    transform: translateY(-30%);
+  }
+  
+
+  p {
+    font-size: 1.4rem;
+    font-family: 'Quicksand-Regular';
+    line-height: 1.4;
+    font-weight: lighter;
+    color: rgb(0, 0, 0);
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  a:visited {
+    color: rgb(208, 199, 227);
+    text-decoration-color: rgb(208, 199, 227);
+  }
+
+  a:hover {
+    color: #ffd773;
+    text-decoration-color: #ffdf86;
+  }
+
+  footer {
+    background-color: rgb(197, 143, 77);
+    font-size: 1.4rem;
+    font-family: 'Quicksand-Regular';
+    line-height: 1.4;
+    text-align: center;
+    justify-content: space-between;
+    border-radius: 18px;
+    margin: 50px 10px 20px 10px;
+    padding: 20px 10px;
+  }
+
+.responsive-video{
+  padding-bottom: 56.25%;
+  height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.responsive-video iframe{
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
