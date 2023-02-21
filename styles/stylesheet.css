@@ -16,13 +16,28 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'Champagne & Limousines';
+    src: url('../fonts/Champagne & Limousines.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GreatVibes-Regular';
+    src: url('../fonts/GreatVibes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   header {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: #444444;
     border-radius: 18px;
-    margin: 10px 10px 20px 10px;
+    border: 10px solid white;
+    z-index: 2000;
   }
 
   li{
@@ -46,17 +61,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
- 
-  .nav-menu{
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
+    
   }
 
+  .nav-branding{
+    color: #d07d00;
+    font-family: 'GreatVibes-Regular';
+    font-size: 40px;
+    text-align: left;
+    letter-spacing: -0.05rem;
+    padding: 0.2rem 0.2rem;
+    text-shadow: 0px 11px 10px rgba(254, 175, 175, 0.8);
+  }
+ 
+
   .hamburger{
-    display: none;
     cursor: pointer;
   }
 
@@ -69,32 +88,21 @@
     background-color: black;
 
   }
-
   
   #home{
     margin-top: 100px;
   }
 
-  @media(max-width:1600px){
-    .container{
-      width: 100%;
-    }
-  }
+
   
-  @media(max-width:1024px){
-    .hamburger{
-    display: block;
-    }
-  }
-  
-  .hamburger.active.bar:nth-child(2){
+  .hamburger.active .bar:nth-child(2){
     opacity: 0;
   }
 
-  .hamburger.active.bar:nth-child(1){
+  .hamburger.active .bar:nth-child(1){
     transform: translateY(8px) rotate(45deg);
   }
-  .hamburger.active.bar:nth-child(3){
+  .hamburger.active .bar:nth-child(3){
     transform: translateY(-8px) rotate(-45deg);
   }
   
@@ -108,6 +116,7 @@
     width: 100%;
     text-align: center;
     transition: 0.3s;
+    
   }
 
   .nav-item{
@@ -117,15 +126,30 @@
   .nav-menu.active{
     left: 0;
   }
+
+  @media screen and (min-width: 768px){
+    /* and (max-width:1024px)*/
+    .nav-menu{
+      position: static;
+      display: flex; 
+      flex-direction: row;
+      left: 0;
+      top: 0;
+      gap: 60px;
+      justify-content: flex-end;
+      align-items: center;
+      
+    }
+
+    .hamburger{
+      display: none;
+    }
   
-  h1 {
-    color: #fefdfb;
-    font-family: 'GreatVibes-Regular';
-    font-size: 35px;
-    text-align: left;
-    letter-spacing: -0.05rem;
-    padding: 0.5rem 0.5rem;
-    text-shadow: 0px 11px 10px rgba(81, 67, 21, 0.8);
+
+    }
+
+    .nav-branding{
+      min-width: 35% ;
   }
 
   
@@ -179,3 +203,10 @@
   width: 100%;
   position: absolute;
 }
+
+@media(max-width:1600px){
+  .container{
+    width: 100%;
+  }
+}
+
